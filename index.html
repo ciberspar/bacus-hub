@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="Bacus Hub: descubre paquetes para Bacus-Pkg y ChiquiOS.">
+  <title>Bacus Hub — Centro de paquetes</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0b1020;
+      --panel: #131b30;
+      --panel-hover: #192541;
+      --text: #f1f5ff;
+      --muted: #9ba9c5;
+      --accent: #8b9dff;
+      --mint: #78f0c1;
+      --border: rgba(180, 198, 255, .14);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 10% 0%, #28316a66, transparent 42%),
+        radial-gradient(ellipse at 100% 25%, #176c6550, transparent 35%),
+        var(--bg);
+      color: var(--text);
+      font: 16px/1.6 system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+    }
+    a { color: inherit; }
+    .container {
+      width: min(1100px, 92%);
+      margin-inline: auto;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding-block: 22px;
+      border-bottom: 1px solid var(--border);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: -.04em;
+    }
+    .logo {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--accent), var(--mint));
+      color: #0b1020;
+      font-size: 1.4rem;
+      box-shadow: 0 8px 30px #78f0c126;
+    }
+    .nav-tag {
+      color: var(--mint);
+      border: 1px solid #78f0c144;
+      background: #78f0c10c;
+      border-radius: 99px;
+      padding: 6px 12px;
+      font-size: .78rem;
+      font-weight: 700;
+    }
+    .hero {
+      padding-block: clamp(55px, 10vw, 105px) 48px;
+      text-align: center;
+    }
+    .eyebrow {
+      color: var(--mint);
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: .75rem;
+      font-weight: 800;
+    }
+    h1 {
+      font-size: clamp(2.8rem, 9vw, 5.5rem);
+      line-height: 1.04;
+      letter-spacing: -.07em;
+      margin: 18px 0;
+    }
+    .gradient-text {
+      background: linear-gradient(100deg, #aab8ff, #78f0c1);
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+    .intro {
+      max-width: 610px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+    .search-area {
+      max-width: 650px;
+      margin: 30px auto 0;
+    }
+    .search {
+      width: 100%;
+      border: 1px solid #aab8ff38;
+      background: #11182bdc;
+      color: var(--text);
+      border-radius: 16px;
+      padding: 17px 19px;
+      font: inherit;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .search:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px #8b9dff20;
+    }
+    .search::placeholder { color: #7583a2; }
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+    .stat {
+      color: var(--muted);
+      border: 1px solid var(--border);
+      background: #ffffff06;
+      border-radius: 99px;
+      padding: 7px 13px;
+      font-size: .84rem;
+    }
+    .stat strong { color: var(--text); }
+    .catalog-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin: 20px 0;
+    }
+    h2 {
+      font-size: 1.5rem;
+      letter-spacing: -.04em;
+      margin: 0;
+    }
+    .subheading {
+      color: var(--muted);
+      font-size: .9rem;
+      margin: 4px 0 0;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+      gap: 18px;
+    }
+    .package {
+      position: relative;
+      overflow: hidden;
+      padding: 23px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: linear-gradient(145deg, #18223aee, #101729ee);
+      transition: transform .2s, border-color .2s, background .2s;
+    }
+    .package:hover {
+      transform: translateY(-4px);
+      border-color: #8b9dff80;
+      background: var(--panel-hover);
+    }
+    .package-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .package-icon {
+      display: grid;
+      place-items: center;
+      width: 45px;
+      height: 45px;
+      border-radius: 14px;
+      background: #8b9dff18;
+      border: 1px solid #8b9dff2c;
+      font-size: 1.3rem;
+    }
+    .version {
+      color: var(--mint);
+      font-size: .78rem;
+      border: 1px solid #78f0c133;
+      background: #78f0c10c;
+      border-radius: 99px;
+      padding: 4px 9px;
+    }
+    .package h3 {
+      margin: 0 0 7px;
+      font-size: 1.15rem;
+      overflow-wrap: anywhere;
+    }
+    .package p {
+      color: var(--muted);
+      margin: 0;
+      font-size: .92rem;
+      overflow-wrap: anywhere;
+    }
+    .package-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 22px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+    .platform {
+      color: var(--muted);
+      font-size: .76rem;
+    }
+    .download {
+      color: #0b1020;
+      background: linear-gradient(110deg, #aab8ff, #78f0c1);
+      text-decoration: none;
+      font-size: .84rem;
+      font-weight: 800;
+      border-radius: 10px;
+      padding: 9px 13px;
+      white-space: nowrap;
+    }
+    .download:hover { filter: brightness(1.08); }
+    .empty {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 48px 20px;
+      border: 1px dashed var(--border);
+      border-radius: 20px;
+      color: var(--muted);
+    }
+    .empty strong {
+      display: block;
+      color: var(--text);
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+    }
+    .notice {
+      margin-top: 35px;
+      padding: 18px 20px;
+      border: 1px solid #f3c96930;
+      border-radius: 15px;
+      background: #f3c96909;
+      color: var(--muted);
+      font-size: .86rem;
+    }
+    .notice strong { color: #f3d58c; }
+    footer {
+      margin-top: 75px;
+      border-top: 1px solid var(--border);
+      padding-block: 25px;
+      color: var(--muted);
+      font-size: .84rem;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <a class="brand" href="./">
+        <span class="logo" aria-hidden="true">B</span>
+        <span>Bacus Hub</span>
+      </a>
+      <span class="nav-tag">COMMUNITY CATALOG</span>
+    </nav>
+    <header class="hero">
+      <p class="eyebrow">El ecosistema Bacus</p>
+      <h1>Todo tu software,<br><span class="gradient-text">en un solo lugar.</span></h1>
+      <p class="intro">
+        Descubre paquetes para Bacus-Pkg y ChiquiOS.
+        Explora el catálogo y encuentra lo que necesitas.
+      </p>
+      <div class="search-area">
+        <label for="q" class="eyebrow">Explorar paquetes</label>
+        <input
+          class="search"
+          id="q"
+          type="search"
+          placeholder="Buscar por nombre, descripción o ID..."
+          autocomplete="off"
+        >
+        <div class="stats">
+          <span class="stat"><strong id="count">0</strong> paquetes</span>
+          <span class="stat">Catálogo automático</span>
+          <span class="stat">Formato .bp</span>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="catalog-head">
+        <div>
+          <h2>Explorar catálogo</h2>
+          <p class="subheading">Paquetes disponibles en las fuentes registradas.</p>
+        </div>
+      </div>
+      <p id="status" class="subheading" role="status" aria-live="polite">
+        Cargando catálogo...
+      </p>
+      <section id="packages" class="grid" aria-label="Paquetes disponibles"></section>
+      <aside class="notice">
+        <strong>⚠ Seguridad:</strong>
+        revisa la procedencia y el contenido de un paquete antes de instalarlo.
+        Que aparezca en el catálogo no garantiza que sea seguro.
+      </aside>
+    </main>
+    <footer>
+      <div class="footer-inner">
+        <span>© 2026 Bacus Hub</span>
+        <span>Hecho para el ecosistema ChiquiOS · Bacus-Pkg</span>
+      </div>
+    </footer>
+  </div>
+  <script>
+    const root = document.querySelector("#packages");
+    const status = document.querySelector("#status");
+    const query = document.querySelector("#q");
+    const count = document.querySelector("#count");
+    let packages = [];
+    function safeURL(value) {
+      try {
+        const url = new URL(value);
+        return url.protocol === "https:" ? url.href : null;
+      } catch {
+        return null;
+      }
+    }
+    function addText(parent, tag, className, value) {
+      const el = document.createElement(tag);
+      if (className) el.className = className;
+      el.textContent = value;
+      parent.append(el);
+      return el;
+    }
+    function render() {
+      const term = query.value.trim().toLowerCase();
+      const shown = packages.filter((p) => {
+        const fields = [
+          p.id, p.name, p.description, p.version,
+          ...(Array.isArray(p.platforms) ? p.platforms : [])
+        ];
+        return fields.join(" ").toLowerCase().includes(term);
+      });
+      root.replaceChildren();
+      count.textContent = String(shown.length);
+      if (!shown.length) {
+        const empty = document.createElement("div");
+        empty.className = "empty";
+        addText(empty, "strong", "", packages.length
+          ? "No encontramos resultados"
+          : "El catálogo todavía está vacío");
+        addText(empty, "p", "", packages.length
+          ? "Prueba con otro término de búsqueda."
+          : "Cuando las fuentes publiquen paquetes .bp válidos, aparecerán aquí.");
+        root.append(empty);
+        return;
+      }
+      for (const p of shown) {
+        const card = document.createElement("article");
+        card.className = "package";
+        const top = document.createElement("div");
+        top.className = "package-top";
+        addText(top, "span", "package-icon", "📦");
+        addText(top, "span", "version", p.version || "Sin versión");
+        const title = document.createElement("h3");
+        title.textContent = p.name || p.id || "Paquete sin nombre";
+        const desc = document.createElement("p");
+        desc.textContent = p.description || "Sin descripción disponible.";
+        const footer = document.createElement("div");
+        footer.className = "package-footer";
+        const platforms = Array.isArray(p.platforms)
+          ? p.platforms.join(", ")
+          : (p.platforms || "Plataforma no indicada");
+        addText(footer, "span", "platform", platforms || "Todas");
+        const url = safeURL(p.url);
+        if (url) {
+          const link = document.createElement("a");
+          link.className = "download";
+          link.href = url;
+          link.rel = "noopener noreferrer";
+          link.target = "_blank";
+          link.textContent = "Ver paquete ↗";
+          footer.append(link);
+        }
+        card.append(top, title, desc, footer);
+        root.append(card);
+      }
+    }
+    query.addEventListener("input", render);
+    fetch("./catalog/packages.json")
+      .then((response) => {
+        if (!response.ok) throw new Error("Error HTTP");
+        return response.json();
+      })
+      .then((data) => {
+        packages = Array.isArray(data.packages) ? data.packages : [];
+        status.textContent = "Catálogo cargado correctamente.";
+        render();
+      })
+      .catch(() => {
+        status.textContent =
+          "No se pudo cargar el catálogo. Inténtalo más tarde.";
+        packages = [];
+        render();
+      });
+  </script>
+</body>
+</html>
