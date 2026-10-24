@@ -1,0 +1,7 @@
+
+# Repositorios oficiales
+ciberspar/bacus-hub
+ciberspar/bacus-pkg
+
+# Añade aquí repositorios externos que participen en Bacus Hub
+# propietario/nombre-del-repositorio
