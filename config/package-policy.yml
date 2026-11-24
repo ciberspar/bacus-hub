@@ -1,0 +1,54 @@
+schema_version: "1.0"
+
+packages:
+  format: "bp"
+  manager: "bacusp"
+
+  conversion:
+    enabled: true
+
+    modes:
+      - package_existing_binary
+      - rebuild_from_source
+      - adapt_source
+      - web_application
+
+    require_source_code: true
+    require_license_metadata: true
+    require_dependency_metadata: true
+    require_target_compatibility: true
+
+  build:
+    isolated: true
+    disposable: true
+    network_disabled_by_default: true
+    require_approval: true
+
+  metadata:
+    required:
+      - name
+      - version
+      - description
+      - license
+      - source
+      - architecture
+      - targets
+      - security_status
+      - sha256
+
+  compatibility:
+    require_test_for_native: true
+    allow_experimental_packages: true
+    mark_untested_targets_unsupported: true
+
+  publication:
+    require_security_report: true
+    require_package_validation: true
+    require_approval: true
+    automatic_publication: false
+
+  installation:
+    handled_by: "bacusp"
+    require_user_confirmation: true
+    reject_unsafe: true
+    reject_unreviewed: true
