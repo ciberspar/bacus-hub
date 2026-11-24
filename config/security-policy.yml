@@ -1,0 +1,114 @@
+schema_version: "1.0"
+
+security:
+  name: "Bacus Hub Security"
+  policy_version: "1.0"
+
+  statuses:
+    safe:
+      label: "Seguro"
+      color: "green"
+      publishable: true
+      meaning: "Superó todas las comprobaciones obligatorias."
+
+    unreviewed:
+      label: "No revisado"
+      color: "yellow"
+      publishable: true
+      meaning: "Todavía no existe una evaluación completa."
+
+    unsafe:
+      label: "Inseguro"
+      color: "red"
+      publishable: false
+      meaning: "Se detectó un problema grave o una condición de rechazo."
+
+  initial_status: unreviewed
+
+  checks:
+    source_integrity:
+      enabled: true
+      required: true
+      verify_sha256: true
+      preserve_source_url: true
+
+    license:
+      enabled: true
+      required: true
+      detect_license: true
+      flag_unknown_license: true
+
+    vulnerabilities:
+      enabled: true
+      required: true
+      scan_dependencies: true
+      scan_known_vulnerabilities: true
+      databases:
+        - osv
+        - trivy
+
+    secrets:
+      enabled: true
+      required: true
+      detect_committed_secrets: true
+
+    malware:
+      enabled: true
+      required: true
+      scan_source_files: true
+      scan_build_artifacts: true
+
+    build:
+      enabled: true
+      required: true
+      isolated_environment: true
+      network_disabled_by_default: true
+
+    package:
+      enabled: true
+      required: true
+      verify_bp_integrity: true
+      verify_manifest: true
+      verify_checksums: true
+
+  classification:
+    mark_unsafe_if:
+      - confirmed_malware
+      - critical_vulnerability
+      - malicious_dependency
+      - leaked_secret
+      - package_integrity_failure
+
+    remain_unreviewed_if:
+      - scan_incomplete
+      - scanner_unavailable
+      - unknown_license
+      - build_not_tested
+      - missing_security_evidence
+
+    mark_safe_only_if:
+      - all_required_checks_pass
+      - source_integrity_verified
+      - dependencies_checked
+      - package_integrity_verified
+      - build_test_passed
+
+  execution:
+    run_untrusted_code: false
+    require_isolation: true
+    require_disposable_environment: true
+    require_manual_approval_for_first_build: true
+
+  publication:
+    publish_safe: true
+    publish_unreviewed: true
+    publish_unsafe: false
+    allow_install_unreviewed: false
+    allow_install_unsafe: false
+
+  reports:
+    include_scan_date: true
+    include_scanner_versions: true
+    include_findings: true
+    include_source_revision: true
+    include_package_hash: true
