@@ -1,3 +1,4 @@
+
 name: Bacus Hub Universe - Source Discovery
 
 on:
@@ -5,54 +6,491 @@ on:
     - cron: "0 6 * * *"
 
   workflow_dispatch:
+    inputs:
+      query:
+        description: "Qué tipo de proyecto buscar (vacío = búsqueda automática)"
+        required: false
+        type: string
+        default: ""
+
+      max_results:
+        description: "Máximo de resultados por búsqueda y plataforma"
+        required: false
+        type: number
+        default: 10
 
 permissions:
-  contents: read
+  contents: write
+
+concurrency:
+  group: bacus-hub-source-discovery
+  cancel-in-progress: false
 
 jobs:
-  validate-sources:
-    name: Check discovery configuration
+  discover:
+    name: Discover open-source projects
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Set up Python
+      - name: Configure Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.x"
+          python-version: "3.12"
 
-      - name: Install YAML parser
-        run: python -m pip install PyYAML
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install PyYAML
 
-      - name: Check enabled sources
+      - name: Discover projects
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          SEARCH_QUERY: ${{ inputs.query }}
+          MAX_RESULTS: ${{ inputs.max_results }}
         run: |
           python - <<'PY'
+          import json
+          import os
+          import time
+          import urllib.parse
+          import urllib.request
+          import urllib.error
+          from pathlib import Path
+          from datetime import datetime, timezone
+
           import yaml
 
-          path = "config/hub-sources.yaml"
+          ROOT = Path.cwd()
+          CONFIG_DIR = ROOT / "config"
+          CATALOG_DIR = ROOT / "catalog"
+          OUTPUT = CATALOG_DIR / "discovery.json"
 
-          with open(path, encoding="utf-8") as file:
-              config = yaml.safe_load(file)
+          CATALOG_DIR.mkdir(parents=True, exist_ok=True)
 
-          sources = config.get("sources", [])
-          enabled = [
-              source for source in sources
-              if source.get("enabled") is True
-          ]
+          # -------------------------------------------------
+          # 1. Load configuration
+          # -------------------------------------------------
 
-          if not enabled:
-              raise SystemExit("No enabled sources configured.")
+          config_path = next(
+              (
+                  path for path in (
+                      CONFIG_DIR / "hub-sources.yaml",
+                      CONFIG_DIR / "hub-sources.yml",
+                  )
+                  if path.is_file()
+              ),
+              None
+          )
 
-          print("BACUS HUB UNIVERSE")
-          print("Configured discovery sources:")
-
-          for source in enabled:
-              print(
-                  f"- {source['id']}: "
-                  f"{source.get('adapter', 'unknown')}"
+          if config_path is None:
+              raise SystemExit(
+                  "Missing config/hub-sources.yaml or .yml"
               )
 
-          print("Configuration check completed.")
+          with config_path.open(encoding="utf-8") as file:
+              config = yaml.safe_load(file)
+
+          if not isinstance(config, dict):
+              raise SystemExit("Invalid hub configuration.")
+
+          sources = config.get("sources", [])
+
+          if not isinstance(sources, list):
+              raise SystemExit("'sources' must be a list.")
+
+          enabled = set()
+
+          for source in sources:
+              if not isinstance(source, dict):
+                  continue
+
+              if source.get("enabled") is True:
+                  source_id = source.get("id", "")
+                  adapter = source.get("adapter", "")
+
+                  if source_id:
+                      enabled.add(str(source_id).lower())
+
+                  if adapter:
+                      enabled.add(str(adapter).lower())
+
+          if not enabled:
+              raise SystemExit("No enabled discovery sources.")
+
+          # -------------------------------------------------
+          # 2. Search configuration
+          # -------------------------------------------------
+
+          manual_query = os.environ.get("SEARCH_QUERY", "").strip()
+
+          try:
+              max_results = int(
+                  os.environ.get("MAX_RESULTS") or "10"
+              )
+          except ValueError:
+              max_results = 10
+
+          max_results = max(1, min(max_results, 30))
+
+          discovery_config = config.get("discovery", {})
+
+          if not isinstance(discovery_config, dict):
+              discovery_config = {}
+
+          configured_terms = discovery_config.get(
+              "search_terms", []
+          )
+
+          if manual_query:
+              queries = [manual_query]
+
+          elif isinstance(configured_terms, list) and configured_terms:
+              queries = [
+                  str(term).strip()
+                  for term in configured_terms
+                  if str(term).strip()
+              ]
+
+          else:
+              queries = [
+                  "open source applications",
+                  "open source desktop software",
+                  "open source developer tools",
+                  "open source games",
+                  "open source web browsers",
+                  "open source libraries",
+                  "open source educational software",
+                  "open source multimedia tools",
+                  "open source utilities",
+                  "open source operating systems",
+              ]
+
+          queries = queries[:10]
+
+          # -------------------------------------------------
+          # 3. HTTP helper
+          # -------------------------------------------------
+
+          def get_json(url, headers=None):
+              request_headers = {
+                  "User-Agent": "Bacus-Hub-Universe/0.1",
+                  "Accept": "application/json",
+              }
+
+              if headers:
+                  request_headers.update(headers)
+
+              request = urllib.request.Request(
+                  url,
+                  headers=request_headers
+              )
+
+              with urllib.request.urlopen(
+                  request,
+                  timeout=25
+              ) as response:
+                  return json.loads(
+                      response.read().decode("utf-8")
+                  )
+
+          # -------------------------------------------------
+          # 4. Normalize project information
+          # -------------------------------------------------
+
+          def normalize(source, item):
+              if not isinstance(item, dict):
+                  return None
+
+              if source == "github":
+                  url = item.get("html_url")
+                  name = item.get("full_name")
+                  description = item.get("description")
+                  language = item.get("language")
+                  stars = item.get("stargazers_count", 0)
+                  branch = item.get("default_branch")
+                  updated = item.get("updated_at")
+
+              elif source == "gitlab":
+                  url = item.get("web_url")
+                  name = item.get("path_with_namespace")
+                  description = item.get("description")
+                  language = None
+                  stars = item.get("star_count", 0)
+                  branch = item.get("default_branch")
+                  updated = item.get("last_activity_at")
+
+              elif source == "codeberg":
+                  url = item.get("html_url")
+                  name = item.get("full_name")
+
+                  if not url and name:
+                      url = "https://codeberg.org/" + name
+
+                  description = item.get("description")
+                  language = item.get("language")
+                  stars = item.get("stars_count", 0)
+                  branch = item.get("default_branch")
+                  updated = item.get("updated_at")
+
+              else:
+                  return None
+
+              if not url or not name:
+                  return None
+
+              return {
+                  "name": name,
+                  "description": description or "",
+                  "source": source,
+                  "source_url": url,
+                  "language": language,
+                  "stars": stars or 0,
+                  "default_branch": branch,
+                  "updated_at": updated,
+                  "security_status": "unreviewed",
+                  "package_status": "not_converted",
+              }
+
+          # -------------------------------------------------
+          # 5. Search providers
+          # -------------------------------------------------
+
+          github_headers = {
+              "Accept": "application/vnd.github+json",
+              "X-GitHub-Api-Version": "2022-11-28",
+          }
+
+          token = os.environ.get("GITHUB_TOKEN")
+
+          if token:
+              github_headers["Authorization"] = f"Bearer {token}"
+
+          def search_github(query):
+              params = urllib.parse.urlencode({
+                  "q": query,
+                  "sort": "updated",
+                  "order": "desc",
+                  "per_page": max_results,
+              })
+
+              data = get_json(
+                  "https://api.github.com/search/repositories?"
+                  + params,
+                  github_headers
+              )
+
+              return data.get("items", [])
+
+          def search_gitlab(query):
+              params = urllib.parse.urlencode({
+                  "search": query,
+                  "simple": "true",
+                  "per_page": max_results,
+                  "order_by": "last_activity_at",
+                  "sort": "desc",
+              })
+
+              return get_json(
+                  "https://gitlab.com/api/v4/projects?"
+                  + params
+              )
+
+          def search_codeberg(query):
+              params = urllib.parse.urlencode({
+                  "q": query,
+                  "limit": max_results,
+                  "page": 1,
+              })
+
+              data = get_json(
+                  "https://codeberg.org/api/v1/repos/search?"
+                  + params
+              )
+
+              if isinstance(data, list):
+                  return data
+
+              if isinstance(data, dict):
+                  return (
+                      data.get("data")
+                      or data.get("items")
+                      or []
+                  )
+
+              return []
+
+          providers = {
+              "github": search_github,
+              "gitlab": search_gitlab,
+              "codeberg": search_codeberg,
+          }
+
+          # -------------------------------------------------
+          # 6. Read previous discovery catalog
+          # -------------------------------------------------
+
+          existing = {}
+
+          if OUTPUT.exists():
+              try:
+                  with OUTPUT.open(encoding="utf-8") as file:
+                      previous = json.load(file)
+
+                  for project in previous.get("projects", []):
+                      url = project.get("source_url")
+
+                      if url:
+                          existing[url] = project
+
+              except (OSError, json.JSONDecodeError):
+                  raise SystemExit(
+                      "Existing discovery catalog is invalid."
+                  )
+
+          # -------------------------------------------------
+          # 7. Search and merge
+          # -------------------------------------------------
+
+          successful_requests = 0
+          failed_requests = 0
+          new_projects = 0
+
+          print("BACUS HUB UNIVERSE")
+          print("Starting source discovery...")
+
+          for provider_name, search_function in providers.items():
+
+              if provider_name not in enabled:
+                  print(f"DISABLED: {provider_name}")
+                  continue
+
+              print(f"\nSOURCE: {provider_name}")
+
+              for query in queries:
+                  print(f"SEARCH: {query}")
+
+                  try:
+                      results = search_function(query)
+                      successful_requests += 1
+
+                      for item in results:
+                          project = normalize(
+                              provider_name,
+                              item
+                          )
+
+                          if not project:
+                              continue
+
+                          url = project["source_url"]
+
+                          if url not in existing:
+                              existing[url] = project
+                              new_projects += 1
+                          else:
+                              old = existing[url]
+
+                              # Refresh public metadata while
+                              # preserving review information.
+                              project["security_status"] = (
+                                  old.get(
+                                      "security_status",
+                                      "unreviewed"
+                                  )
+                              )
+
+                              project["package_status"] = (
+                                  old.get(
+                                      "package_status",
+                                      "not_converted"
+                                  )
+                              )
+
+                              existing[url] = project
+
+                      print(f"FOUND: {len(results)}")
+
+                  except Exception as error:
+                      failed_requests += 1
+                      print(
+                          f"WARNING: {provider_name}: {error}"
+                      )
+
+                  time.sleep(1)
+
+          # -------------------------------------------------
+          # 8. Save catalog
+          # -------------------------------------------------
+
+          if successful_requests == 0:
+              raise SystemExit(
+                  "All enabled discovery providers failed."
+              )
+
+          projects = sorted(
+              existing.values(),
+              key=lambda project: (
+                  project.get("name", "").lower()
+              )
+          )
+
+          catalog = {
+              "schema_version": "1.0",
+              "hub": "Bacus Hub Universe",
+              "updated_at": datetime.now(
+                  timezone.utc
+              ).isoformat(),
+              "search_mode": (
+                  "manual" if manual_query else "automatic"
+              ),
+              "search_queries": queries,
+              "statistics": {
+                  "total_projects": len(projects),
+                  "new_projects": new_projects,
+                  "successful_requests": successful_requests,
+                  "failed_requests": failed_requests,
+              },
+              "projects": projects,
+          }
+
+          temporary = OUTPUT.with_suffix(".json.tmp")
+
+          with temporary.open("w", encoding="utf-8") as file:
+              json.dump(
+                  catalog,
+                  file,
+                  indent=2,
+                  ensure_ascii=False
+              )
+              file.write("\n")
+
+          temporary.replace(OUTPUT)
+
+          print("\nDISCOVERY COMPLETED")
+          print(f"Total projects: {len(projects)}")
+          print(f"New projects: {new_projects}")
+          print(f"Failed requests: {failed_requests}")
+          print(f"Catalog: {OUTPUT.relative_to(ROOT)}")
+
           PY
+
+      - name: Commit discovery catalog
+        run: |
+          git config user.name "bacus-hub-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add catalog/discovery.json
+
+          if git diff --cached --quiet; then
+            echo "No catalog changes."
+          else
+            git commit -m "Update Bacus Hub discovery catalog"
+            git push
+          fi
+
