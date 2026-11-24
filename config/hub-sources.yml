@@ -1,0 +1,171 @@
+
+schema_version: "1.0"
+
+hub:
+  name: "Bacus Hub"
+  version: "0.1.0"
+  package_format: "bp"
+
+discovery:
+  automatic:
+    enabled: true
+    interval_hours: 24
+    inspect_new_repositories: true
+    inspect_releases: true
+    inspect_source_code: true
+
+  manual:
+    enabled: true
+    search_by_name: true
+    search_by_url: true
+    search_by_category: true
+
+sources:
+  - id: github
+    name: GitHub
+    adapter: github
+    enabled: true
+    public_repositories: true
+    inspect_releases: true
+
+  - id: gitlab
+    name: GitLab
+    adapter: gitlab
+    enabled: true
+    public_repositories: true
+    inspect_releases: true
+
+  - id: codeberg
+    name: Codeberg
+    adapter: codeberg
+    enabled: true
+    public_repositories: true
+    inspect_releases: true
+
+  - id: generic_git
+    name: Generic Git
+    adapter: git
+    enabled: true
+    public_repositories: true
+
+source_detection:
+  enabled: true
+  manifests:
+    - CMakeLists.txt
+    - Makefile
+    - configure
+    - meson.build
+    - Cargo.toml
+    - package.json
+    - pyproject.toml
+    - setup.py
+    - go.mod
+    - pom.xml
+    - build.gradle
+    - "*.sln"
+    - "*.vcxproj"
+
+  detect_languages: true
+  detect_build_system: true
+  detect_dependencies: true
+  detect_license: true
+  detect_architecture: true
+
+conversion:
+  enabled: true
+  output_format: bp
+
+  modes:
+    - package_existing_binary
+    - rebuild_from_source
+    - adapt_source
+    - web_application
+
+  automatic_install: false
+  automatic_publication: false
+  require_license_review: true
+  require_dependency_check: true
+  require_build_test: true
+  require_package_validation: true
+
+  build:
+    isolated_environment: true
+    disposable_environment: true
+    network_disabled_by_default: true
+    require_approval: true
+
+  security:
+    verify_sha256: true
+    scan_dependencies: true
+    preserve_source_origin: true
+    reject_unknown_license: false
+    mark_unverified_packages: true
+
+targets:
+  - id: debian
+    family: linux
+  - id: ubuntu
+    family: linux
+  - id: opensuse
+    family: linux
+  - id: arch
+    family: linux
+  - id: alpine
+    family: linux
+  - id: fedora
+    family: linux
+
+  - id: freebsd
+    family: bsd
+  - id: openbsd
+    family: bsd
+
+  - id: solaris
+    family: unix
+  - id: illumos
+    family: unix
+
+  - id: hurd
+    family: microkernel
+  - id: minix
+    family: microkernel
+  - id: serenity
+    family: alternative
+  - id: haiku
+    family: alternative
+  - id: plan9
+    family: alternative
+  - id: kolibrios
+    family: alternative
+
+  - id: windows
+    family: desktop
+  - id: dos
+    family: legacy
+  - id: termux
+    family: mobile
+  - id: android
+    family: mobile
+  - id: ios
+    family: mobile
+  - id: rtos
+    family: embedded
+
+compatibility:
+  detection: automatic
+  require_target_validation: true
+  support_levels:
+    - native
+    - compatible
+    - experimental
+    - unsupported
+  never_claim_untested_compatibility: true
+
+catalog:
+  enabled: true
+  require_review_before_publication: true
+  include_source_url: true
+  include_license: true
+  include_supported_targets: true
+  include_build_information: true
+  include_sha256: true
