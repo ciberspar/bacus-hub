@@ -39,7 +39,8 @@ jobs:
           from pathlib import Path
           import yaml
 
-          files = list(Path("config").glob("*.yaml"))
+          files = sorted(Path("config").glob("*.yaml"))
+          files += sorted(Path("config").glob("*.yml"))
 
           if not files:
               raise SystemExit("No configuration YAML files found.")
