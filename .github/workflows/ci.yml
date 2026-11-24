@@ -1,0 +1,57 @@
+name: Bacus Hub Universe - CI
+
+on:
+  push:
+    branches:
+      - main
+      - pruebas
+
+  pull_request:
+    branches:
+      - main
+      - pruebas
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-yaml:
+    name: Validate YAML configuration
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install YAML parser
+        run: python -m pip install PyYAML
+
+      - name: Validate YAML files
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import yaml
+
+          files = list(Path("config").glob("*.yaml"))
+
+          if not files:
+              raise SystemExit("No configuration YAML files found.")
+
+          for file in files:
+              with file.open("r", encoding="utf-8") as stream:
+                  data = yaml.safe_load(stream)
+
+              if not isinstance(data, dict):
+                  raise SystemExit(f"Invalid YAML structure: {file}")
+
+              print(f"VALID: {file}")
+
+          print(f"Validated {len(files)} YAML files.")
+          PY
