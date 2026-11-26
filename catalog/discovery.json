@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "hub": "Bacus Hub Universe",
-  "updated_at": "2026-11-25T16:59:51.269526+00:00",
+  "updated_at": "2026-11-26T16:40:01.953060+00:00",
   "search_mode": "automatic",
   "search_queries": [
     "open source applications",
@@ -16,12 +16,24 @@
     "open source operating systems"
   ],
   "statistics": {
-    "total_projects": 175,
-    "new_projects": 175,
+    "total_projects": 249,
+    "new_projects": 74,
     "successful_requests": 20,
     "failed_requests": 10
   },
   "projects": [
+    {
+      "name": "10igma/deckwerk",
+      "description": "Free, open-source DJ software for techno: beat-synced decks, track analysis (BPM, key, beat grid) and drawable transitions. Rust audio engine, Tauri desktop app for Windows, macOS and Linux.",
+      "source": "github",
+      "source_url": "https://github.com/10igma/deckwerk",
+      "language": "Rust",
+      "stars": 0,
+      "default_branch": "main",
+      "updated_at": "2026-11-26T11:53:58Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
     {
       "name": "1nn0v8r/toolshed",
       "description": "Open source developer tools: MCP servers, CLIs and automation for faster, leaner AI-assisted coding.",
@@ -31,6 +43,18 @@
       "stars": 1,
       "default_branch": "main",
       "updated_at": "2026-11-18T13:27:02Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "a1i6ek/vard",
+      "description": "Open-source identity and authentication server built with Go and SvelteKit. Secure, self-hosted identity infrastructure for modern applications.",
+      "source": "github",
+      "source_url": "https://github.com/a1i6ek/vard",
+      "language": "Go",
+      "stars": 0,
+      "default_branch": "main",
+      "updated_at": "2026-11-09T16:14:49Z",
       "security_status": "unreviewed",
       "package_status": "not_converted"
     },
@@ -54,7 +78,7 @@
       "language": null,
       "stars": 0,
       "default_branch": "main",
-      "updated_at": "2026-11-25T07:45:27.636Z",
+      "updated_at": "2026-11-26T07:40:05.432Z",
       "security_status": "unreviewed",
       "package_status": "not_converted"
     },
@@ -100,9 +124,9 @@
       "source": "github",
       "source_url": "https://github.com/agentes-chat/agentes-chat",
       "language": "TypeScript",
-      "stars": 2040,
+      "stars": 2066,
       "default_branch": "main",
-      "updated_at": "2026-11-25T15:23:05Z",
+      "updated_at": "2026-11-26T16:01:09Z",
       "security_status": "unreviewed",
       "package_status": "not_converted"
     },
@@ -115,6 +139,18 @@
       "stars": 13,
       "default_branch": "main",
       "updated_at": "2026-11-22T22:25:45Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "ahfarhan001-dot/dev-ai-tools",
+      "description": "Open-source AI tools and reusable development skills for developers.",
+      "source": "github",
+      "source_url": "https://github.com/ahfarhan001-dot/dev-ai-tools",
+      "language": "Python",
+      "stars": 0,
+      "default_branch": "main",
+      "updated_at": "2026-11-26T16:01:36Z",
       "security_status": "unreviewed",
       "package_status": "not_converted"
     },
@@ -167,6 +203,18 @@
       "package_status": "not_converted"
     },
     {
+      "name": "Amrit-droid-og/Portfolio",
+      "description": "Interactive web developer portfolio showcasing custom-built applications, spatial simulations, and open-source tools. Engineered using React, GSAP, Framer Motion, and Tailwind CSS",
+      "source": "github",
+      "source_url": "https://github.com/Amrit-droid-og/Portfolio",
+      "language": "JavaScript",
+      "stars": 0,
+      "default_branch": "main",
+      "updated_at": "2026-11-26T16:24:14Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
       "name": "AnatoriusDev/Anatorius",
       "description": "Fabric utility client for Minecraft 1.21.11. Now open source.",
       "source": "github",
@@ -198,7 +246,7 @@
       "language": null,
       "stars": 0,
       "default_branch": "main",
-      "updated_at": "2026-11-25T14:28:09.755Z",
+      "updated_at": "2026-11-26T13:59:51.020Z",
       "security_status": "unreviewed",
       "package_status": "not_converted"
     },
@@ -227,6 +275,18 @@
       "package_status": "not_converted"
     },
     {
+      "name": "ArchiveBox/ArchiveBox",
+      "description": "🗃 Open source self-hosted web archiving. Takes URLs/browser history/bookmarks/Pocket/Pinboard/etc., saves HTML, JS, PDFs, media, and more...",
+      "source": "github",
+      "source_url": "https://github.com/ArchiveBox/ArchiveBox",
+      "language": "Python",
+      "stars": 29101,
+      "default_branch": "dev",
+      "updated_at": "2026-11-26T14:18:18Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
       "name": "arcitai/agentic-system",
       "description": "An open-source framework for building and operating agentic systems.",
       "source": "github",
@@ -251,6 +311,18 @@
       "package_status": "not_converted"
     },
     {
+      "name": "ASC-Community/AngouriMath",
+      "description": "Open-source cross-platform symbolic algebra library for C# and F#. Can be used for both production and research purposes.",
+      "source": "github",
+      "source_url": "https://github.com/ASC-Community/AngouriMath",
+      "language": "C#",
+      "stars": 832,
+      "default_branch": "master",
+      "updated_at": "2026-11-19T21:37:03Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
       "name": "asintha1a/skipcam",
       "description": "Skip the camera. Scan, generate and inspect QR codes directly in your browser. A privacy-first open-source utility by Self Graphic Lab.",
       "source": "github",
@@ -259,6 +331,30 @@
       "stars": 0,
       "default_branch": "main",
       "updated_at": "2026-11-25T13:38:59Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "AutomatosAI/automatos-ai",
+      "description": "The open-source AI Operating System — run a workforce of AI agents on your own machine. Any model, 1,000+ tools, a Knowledge Graph, and your own Claude Code as agents. Self-host with docker compose.",
+      "source": "github",
+      "source_url": "https://github.com/AutomatosAI/automatos-ai",
+      "language": "Python",
+      "stars": 82,
+      "default_branch": "main",
+      "updated_at": "2026-11-26T10:43:25Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "autonomous-ai/lampOS",
+      "description": "The open-source operating system for physical AI.",
+      "source": "github",
+      "source_url": "https://github.com/autonomous-ai/lampOS",
+      "language": "Rust",
+      "stars": 590,
+      "default_branch": "lamp-voice",
+      "updated_at": "2026-11-25T21:03:15Z",
       "security_status": "unreviewed",
       "package_status": "not_converted"
     },
@@ -280,9 +376,9 @@
       "source": "github",
       "source_url": "https://github.com/BCD1210/soju",
       "language": "Python",
-      "stars": 73,
+      "stars": 81,
       "default_branch": "main",
-      "updated_at": "2026-11-25T11:56:36Z",
+      "updated_at": "2026-11-26T14:54:59Z",
       "security_status": "unreviewed",
       "package_status": "not_converted"
     },
@@ -323,6 +419,18 @@
       "package_status": "not_converted"
     },
     {
+      "name": "bunnyskateart/BABA-Software-Discovery",
+      "description": "Catalogo desktop per Windows per scoprire software open source su GitHub e trovare le release disponibili per Windows, macOS e Linux.",
+      "source": "github",
+      "source_url": "https://github.com/bunnyskateart/BABA-Software-Discovery",
+      "language": null,
+      "stars": 0,
+      "default_branch": "main",
+      "updated_at": "2026-11-26T12:02:49Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
       "name": "byobot/byobot",
       "description": "an open source personal health operating system. you own all your own data locally. bring any agent.",
       "source": "github",
@@ -347,14 +455,26 @@
       "package_status": "not_converted"
     },
     {
+      "name": "campbellarchiezh-debug/web3-security-scanner",
+      "description": "Open-source Web3 wallet safety inspector, contract risk analyzer, and multi-chain verification utility.",
+      "source": "github",
+      "source_url": "https://github.com/campbellarchiezh-debug/web3-security-scanner",
+      "language": "HTML",
+      "stars": 1,
+      "default_branch": "main",
+      "updated_at": "2026-11-12T16:43:05Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
       "name": "carpaaaaa/oriel",
       "description": "Oriel: a free, open source web browser for Windows 10 and 11. An unofficial port of Search, the Mac browser by Office Commun. Tabs down the side, spaces, ads blocked, Chrome extensions.",
       "source": "github",
       "source_url": "https://github.com/carpaaaaa/oriel",
       "language": "TypeScript",
-      "stars": 1,
+      "stars": 2,
       "default_branch": "main",
-      "updated_at": "2026-11-25T10:50:26Z",
+      "updated_at": "2026-11-26T09:07:30Z",
       "security_status": "unreviewed",
       "package_status": "not_converted"
     },
@@ -395,6 +515,42 @@
       "package_status": "not_converted"
     },
     {
+      "name": "chandler.bing/ecoscan-14052249-deletion_scheduled-89468717",
+      "description": "An Open Source Virtual Tabletop for playing games with friends all over the world",
+      "source": "gitlab",
+      "source_url": "https://gitlab.com/chandler.bing/ecoscan-14052249-deletion_scheduled-89468717",
+      "language": null,
+      "stars": 0,
+      "default_branch": "main",
+      "updated_at": "2026-11-25T22:16:08.172Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "chandler.bing/ecoscan-14052249-deletion_scheduled-89476027",
+      "description": "An Open Source Virtual Tabletop for playing games with friends all over the world",
+      "source": "gitlab",
+      "source_url": "https://gitlab.com/chandler.bing/ecoscan-14052249-deletion_scheduled-89476027",
+      "language": null,
+      "stars": 0,
+      "default_branch": "main",
+      "updated_at": "2026-11-26T03:55:30.919Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "chandler.bing/ecoscan-14052249-deletion_scheduled-89501549",
+      "description": "An Open Source Virtual Tabletop for playing games with friends all over the world",
+      "source": "gitlab",
+      "source_url": "https://gitlab.com/chandler.bing/ecoscan-14052249-deletion_scheduled-89501549",
+      "language": null,
+      "stars": 0,
+      "default_branch": "main",
+      "updated_at": "2026-11-26T15:17:59.557Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
       "name": "chandler.bing/ecoscan-3330423-deletion_scheduled-89442290",
       "description": "Scilab is free and open source software for numerical computation providing a powerful computing environment for engineering and scientific applications.",
       "source": "gitlab",
@@ -403,6 +559,54 @@
       "stars": 0,
       "default_branch": "minor",
       "updated_at": "2026-11-25T11:42:52.201Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "chandler.bing/ecoscan-3330423-deletion_scheduled-89470156",
+      "description": "Scilab is free and open source software for numerical computation providing a powerful computing environment for engineering and scientific applications.",
+      "source": "gitlab",
+      "source_url": "https://gitlab.com/chandler.bing/ecoscan-3330423-deletion_scheduled-89470156",
+      "language": null,
+      "stars": 0,
+      "default_branch": "minor",
+      "updated_at": "2026-11-25T23:16:39.091Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "chandler.bing/ecoscan-3330423-deletion_scheduled-89477329",
+      "description": "Scilab is free and open source software for numerical computation providing a powerful computing environment for engineering and scientific applications.",
+      "source": "gitlab",
+      "source_url": "https://gitlab.com/chandler.bing/ecoscan-3330423-deletion_scheduled-89477329",
+      "language": null,
+      "stars": 0,
+      "default_branch": "minor",
+      "updated_at": "2026-11-26T04:54:48.602Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "chandler.bing/ecoscan-3330423-deletion_scheduled-89489011",
+      "description": "Scilab is free and open source software for numerical computation providing a powerful computing environment for engineering and scientific applications.",
+      "source": "gitlab",
+      "source_url": "https://gitlab.com/chandler.bing/ecoscan-3330423-deletion_scheduled-89489011",
+      "language": null,
+      "stars": 0,
+      "default_branch": "minor",
+      "updated_at": "2026-11-26T10:35:00.104Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "chandler.bing/ecoscan-3330423-deletion_scheduled-89504027",
+      "description": "Scilab is free and open source software for numerical computation providing a powerful computing environment for engineering and scientific applications.",
+      "source": "gitlab",
+      "source_url": "https://gitlab.com/chandler.bing/ecoscan-3330423-deletion_scheduled-89504027",
+      "language": null,
+      "stars": 0,
+      "default_branch": "minor",
+      "updated_at": "2026-11-26T16:18:40.932Z",
       "security_status": "unreviewed",
       "package_status": "not_converted"
     },
@@ -479,14 +683,50 @@
       "package_status": "not_converted"
     },
     {
+      "name": "chandler.bing/ecoscan-73442-deletion_scheduled-89468673",
+      "description": "The open source, cross platform level editor for idtech games (GtkRadiant fork) - [netradiant.gitlab.io](https://netradiant.gitlab.io)",
+      "source": "gitlab",
+      "source_url": "https://gitlab.com/chandler.bing/ecoscan-73442-deletion_scheduled-89468673",
+      "language": null,
+      "stars": 0,
+      "default_branch": "master",
+      "updated_at": "2026-11-25T22:15:48.449Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "chandler.bing/ecoscan-73442-deletion_scheduled-89486174",
+      "description": "The open source, cross platform level editor for idtech games (GtkRadiant fork) - [netradiant.gitlab.io](https://netradiant.gitlab.io)",
+      "source": "gitlab",
+      "source_url": "https://gitlab.com/chandler.bing/ecoscan-73442-deletion_scheduled-89486174",
+      "language": null,
+      "stars": 0,
+      "default_branch": "master",
+      "updated_at": "2026-11-26T09:37:47.883Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "chandler.bing/ecoscan-73442-deletion_scheduled-89501736",
+      "description": "The open source, cross platform level editor for idtech games (GtkRadiant fork) - [netradiant.gitlab.io](https://netradiant.gitlab.io)",
+      "source": "gitlab",
+      "source_url": "https://gitlab.com/chandler.bing/ecoscan-73442-deletion_scheduled-89501736",
+      "language": null,
+      "stars": 0,
+      "default_branch": "master",
+      "updated_at": "2026-11-26T15:23:12.819Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
       "name": "ChurchPresenter/ChurchPresenter",
       "description": "Free, open-source worship presentation software for churches. Distraction-free platform with offline-first architecture, multi-display support, Bible verses, songs, media, and mobile control.",
       "source": "github",
       "source_url": "https://github.com/ChurchPresenter/ChurchPresenter",
       "language": "Kotlin",
-      "stars": 25,
+      "stars": 26,
       "default_branch": "main",
-      "updated_at": "2026-11-24T07:44:34Z",
+      "updated_at": "2026-11-26T09:56:38Z",
       "security_status": "unreviewed",
       "package_status": "not_converted"
     },
@@ -503,6 +743,18 @@
       "package_status": "not_converted"
     },
     {
+      "name": "CoinCashewIO/FamilyDAO",
+      "description": "FamilyDAO offers a peer-to-peer, open-source, permissionless, socially useful, private, immutable and decentralized blockchain-based software application supporting family networks over generations while offering protection from strangers online",
+      "source": "github",
+      "source_url": "https://github.com/CoinCashewIO/FamilyDAO",
+      "language": null,
+      "stars": 1,
+      "default_branch": "main",
+      "updated_at": "2026-11-25T06:27:26Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
       "name": "control-protection-grids-tudelft/Control-of-HVDC-AC-Power-Systems",
       "description": "We are the Control of HVDC/AC power systems team at TU Delft, led by Dr. Aleksandra Lekić. Our research focuses on the control, protection, and stability of modern AC/DC power systems, power electronics, HVDC grids, renewable energy integration, and real-time simulation. We develop open-source tools, educational resources, and research software.",
       "source": "github",
@@ -511,6 +763,18 @@
       "stars": 0,
       "default_branch": "main",
       "updated_at": "2026-11-08T15:33:05Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "coollabsio/coolify",
+      "description": "An open-source, self-hostable PaaS alternative to Vercel, Heroku & Netlify that lets you easily deploy static sites, databases, full-stack applications and 360+ one-click services on your own servers.",
+      "source": "github",
+      "source_url": "https://github.com/coollabsio/coolify",
+      "language": "PHP",
+      "stars": 66500,
+      "default_branch": "main",
+      "updated_at": "2026-11-26T16:36:02Z",
       "security_status": "unreviewed",
       "package_status": "not_converted"
     },
@@ -563,6 +827,30 @@
       "package_status": "not_converted"
     },
     {
+      "name": "DamienBecherini/simulateur-independant-fr",
+      "description": "Simulateur de revenus pour freelances et indépendants en France. Comparez 4 statuts juridiques (ME, EI, SASU, EURL) pour optimiser votre net après impôts et cotisations. Une application de bureau 100% hors-ligne, gratuite et open-source qui garantit votre confidentialité.",
+      "source": "github",
+      "source_url": "https://github.com/DamienBecherini/simulateur-independant-fr",
+      "language": "TypeScript",
+      "stars": 2,
+      "default_branch": "main",
+      "updated_at": "2026-11-24T17:32:17Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "DarkLian/WinScreen",
+      "description": "Free, open-source, lightweight Windows utility for advanced window control, interactive Picture-in-Picture, animated app background, floating Anchors, and Quality of life features",
+      "source": "github",
+      "source_url": "https://github.com/DarkLian/WinScreen",
+      "language": "C#",
+      "stars": 13,
+      "default_branch": "main",
+      "updated_at": "2026-11-23T20:10:49Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
       "name": "davidcl/scilab",
       "description": "Scilab is free and open source software for numerical computation providing a powerful computing environment for engineering and scientific applications.",
       "source": "gitlab",
@@ -570,7 +858,7 @@
       "language": null,
       "stars": 0,
       "default_branch": "minor",
-      "updated_at": "2026-11-25T16:32:51.174Z",
+      "updated_at": "2026-11-26T14:27:45.337Z",
       "security_status": "unreviewed",
       "package_status": "not_converted"
     },
@@ -604,9 +892,9 @@
       "source": "github",
       "source_url": "https://github.com/devswha/ovis",
       "language": "TypeScript",
-      "stars": 2217,
+      "stars": 2230,
       "default_branch": "main",
-      "updated_at": "2026-11-25T14:39:32Z",
+      "updated_at": "2026-11-26T14:31:00Z",
       "security_status": "unreviewed",
       "package_status": "not_converted"
     },
@@ -630,7 +918,7 @@
       "language": null,
       "stars": 0,
       "default_branch": "main",
-      "updated_at": "2026-11-24T15:39:18.108Z",
+      "updated_at": "2026-11-26T13:05:01.206Z",
       "security_status": "unreviewed",
       "package_status": "not_converted"
     },
@@ -654,7 +942,31 @@
       "language": null,
       "stars": 1,
       "default_branch": "main",
-      "updated_at": "2026-11-25T13:25:08.750Z",
+      "updated_at": "2026-11-26T16:39:07.916Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "dirde12078fb5/Xiaosi-Distributed-Artificial-Intelligence-Platform",
+      "description": "This is \"Xiaosi Distributed AI,\" a desktop multi-functional platform built on a self-developed Gen architecture using multiple programming languages and open-source services. It integrates hardware detection, system monitoring, and multi-threaded downloading, while supporting the addition of both custom and recommended third-party software",
+      "source": "github",
+      "source_url": "https://github.com/dirde12078fb5/Xiaosi-Distributed-Artificial-Intelligence-Platform",
+      "language": "Python",
+      "stars": 1,
+      "default_branch": "main",
+      "updated_at": "2026-09-24T16:34:18Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "DosukaSOL/PushFPS",
+      "description": "PushFPS: push 30 FPS console games to 60 or 120 FPS. Real-time AI frame generation for any capture card on Windows, with NVIDIA RTX and AMD support. Free and open source, based on Veyra.",
+      "source": "github",
+      "source_url": "https://github.com/DosukaSOL/PushFPS",
+      "language": "C++",
+      "stars": 314,
+      "default_branch": "main",
+      "updated_at": "2026-11-26T15:41:14Z",
       "security_status": "unreviewed",
       "package_status": "not_converted"
     },
@@ -683,6 +995,18 @@
       "package_status": "not_converted"
     },
     {
+      "name": "Dreamerol/DREAMEROL-SYNC",
+      "description": "Production-ready Python-powered GitHub application featuring an intuitive Welcome Screen and interactive Dashboard for multi-account management, repository discovery, GitHub API integration, and automated upstream fork synchronization. Designed for reliable repository management and streamlined open-source workflows.",
+      "source": "github",
+      "source_url": "https://github.com/Dreamerol/DREAMEROL-SYNC",
+      "language": "Python",
+      "stars": 5,
+      "default_branch": "main",
+      "updated_at": "2026-11-26T13:12:30Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
       "name": "druid-studio/druid-android-linux-studio",
       "description": "Druid Android Linux Studio is an open-source development environment for Android and Linux. It combines guided workflows for beginners, advanced development tools, device and SDK management, Android build workflows, emulator integration, and developer diagnostics. Designed for transparent, accessible, and locally controlled development. Available for Linux and Windows. Licensed under MIT; third-party components retain their respective licenses.\r\n\r\n## What's coming – The next generation of Druid Studio\r\n\r\nThe upcoming stable release of Druid / Android Linux Studio introduces a major expansion of the development environment.\r\n\r\n**New capabilities in development:**\r\n\r\n- **Four integrated workspaces:** A clearer, more structured development experience.\r\n- **Local AI Workspace:** A dedicated AI environment powered by Libre AuroraUI.\r\n- **AI-assisted coding:** Context-aware coding support integrated into the developer workspace.\r\n- **Advanced Android integration:** Expanded device management, ADB tools and emulator workflows.\r\n- **Improved user experience:** More consistent navigation, clearer workflows and improved usability.\r\n\r\nOur goal is to bring traditional Android and Linux development tools together with local AI assistance in one coherent, community-oriented environment.\r\n\r\nThese capabilities are being refined and integrated for the upcoming stable release.",
       "source": "gitlab",
@@ -707,14 +1031,26 @@
       "package_status": "not_converted"
     },
     {
+      "name": "efolusi/meridian",
+      "description": "Open-source web design system for browsers. Accessible React components and design tokens. Used by Efolusi for product websites.",
+      "source": "github",
+      "source_url": "https://github.com/efolusi/meridian",
+      "language": "JavaScript",
+      "stars": 2,
+      "default_branch": "main",
+      "updated_at": "2026-11-20T06:34:41Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
       "name": "elizaOS/eliza",
       "description": "Open source agentic operating system",
       "source": "github",
       "source_url": "https://github.com/elizaOS/eliza",
       "language": "Java",
-      "stars": 19919,
+      "stars": 19923,
       "default_branch": "develop",
-      "updated_at": "2026-11-25T09:40:30Z",
+      "updated_at": "2026-11-26T13:03:10Z",
       "security_status": "unreviewed",
       "package_status": "not_converted"
     },
@@ -727,6 +1063,18 @@
       "stars": 0,
       "default_branch": "develop",
       "updated_at": "2023-04-04T08:07:20.254Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "EnAccess/micropowermanager",
+      "description": "Open Source Management Tool for Decentralized Utilities.",
+      "source": "github",
+      "source_url": "https://github.com/EnAccess/micropowermanager",
+      "language": "PHP",
+      "stars": 30,
+      "default_branch": "main",
+      "updated_at": "2026-11-12T15:28:40Z",
       "security_status": "unreviewed",
       "package_status": "not_converted"
     },
@@ -779,6 +1127,30 @@
       "package_status": "not_converted"
     },
     {
+      "name": "exponential-im/exponential",
+      "description": "The open-source operating system for startups run by people and AI agents: goals, projects, meetings and decisions. AGPL-3.0.",
+      "source": "github",
+      "source_url": "https://github.com/exponential-im/exponential",
+      "language": "TypeScript",
+      "stars": 4,
+      "default_branch": "main",
+      "updated_at": "2026-11-16T15:06:07Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "fanvue/fanv-ui",
+      "description": "Open source component library",
+      "source": "github",
+      "source_url": "https://github.com/fanvue/fanv-ui",
+      "language": "TypeScript",
+      "stars": 4,
+      "default_branch": "main",
+      "updated_at": "2026-11-12T14:07:36Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
       "name": "fihlatv/easyrtc",
       "description": "EasyRTC is a bundle of Open Source WebRTC joy!   Our Javascript API hides the differences between Chrome and Firefox browsers and simplifies coding needed for working WebRTC apps. Signalling server using socket.io built on node.js.  Tons of free code so you can build WebRTC apps in a few hours that just work.  Demos include Instant messaging, Multiparty chatroom, Audio + Video, Screen sharing, Data channel Messaging and File sharing, and more.",
       "source": "gitlab",
@@ -811,6 +1183,18 @@
       "stars": 0,
       "default_branch": "main",
       "updated_at": "2026-11-17T06:27:06Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "fliks-app/fliks",
+      "description": "Fliks is an open-source, self-hosted media server and library manager. It organizes and streams movies, TV shows, music, books and comics.",
+      "source": "github",
+      "source_url": "https://github.com/fliks-app/fliks",
+      "language": "Rust",
+      "stars": 31,
+      "default_branch": "main",
+      "updated_at": "2026-11-22T22:54:59Z",
       "security_status": "unreviewed",
       "package_status": "not_converted"
     },
@@ -880,9 +1264,9 @@
       "source": "github",
       "source_url": "https://github.com/hahwul/dalfox",
       "language": "Rust",
-      "stars": 5397,
+      "stars": 5399,
       "default_branch": "main",
-      "updated_at": "2026-11-25T16:01:37Z",
+      "updated_at": "2026-11-26T15:09:20Z",
       "security_status": "unreviewed",
       "package_status": "not_converted"
     },
@@ -895,6 +1279,18 @@
       "stars": 70,
       "default_branch": "main",
       "updated_at": "2026-11-12T14:24:40Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "hendurhance/pandia",
+      "description": "A powerful, open-source JSON visualization and editing tool for developers",
+      "source": "github",
+      "source_url": "https://github.com/hendurhance/pandia",
+      "language": "Rust",
+      "stars": 61,
+      "default_branch": "main",
+      "updated_at": "2026-11-26T06:04:49Z",
       "security_status": "unreviewed",
       "package_status": "not_converted"
     },
@@ -919,6 +1315,18 @@
       "stars": 13773,
       "default_branch": "master",
       "updated_at": "2026-11-25T16:46:10Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "hiimivex/Arcadia",
+      "description": "All your emulators, one app. PSP, DS, 3DS, PS2, Switch… gathered in a Steam-like library with your collection, favorites and playtime. Drop a ROM, Arcadia handles the rest. Open source, free, zero hassle. Your game library deserves better than a messy folder. Not affiliated with any console maker. No ROMs, BIOS or keys included.",
+      "source": "github",
+      "source_url": "https://github.com/hiimivex/Arcadia",
+      "language": "JavaScript",
+      "stars": 0,
+      "default_branch": "main",
+      "updated_at": "2026-11-22T14:12:16Z",
       "security_status": "unreviewed",
       "package_status": "not_converted"
     },
@@ -995,6 +1403,30 @@
       "package_status": "not_converted"
     },
     {
+      "name": "intrafind/ihub-apps",
+      "description": "iHub is a secure, open-source AI application suite that empowers organizations to perform creative and general tasks with generative AI - directly within their protected corporate environment, in the cloud or on their local machine.",
+      "source": "github",
+      "source_url": "https://github.com/intrafind/ihub-apps",
+      "language": "JavaScript",
+      "stars": 27,
+      "default_branch": "main",
+      "updated_at": "2026-11-24T00:11:20Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "IuWuauai39/teardown-optimizer-2026",
+      "description": "A lightweight open-source utility for managing and applying recommended configuration settings for Teardown on Windows.",
+      "source": "github",
+      "source_url": "https://github.com/IuWuauai39/teardown-optimizer-2026",
+      "language": "C++",
+      "stars": 1,
+      "default_branch": "main",
+      "updated_at": "2026-11-12T08:33:43Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
       "name": "izynu/arvona",
       "description": "Arvona is a hand-verified directory of 174 legally free resources across 14 categories, including open-source software, AI tools, privacy utilities, educational courses, books, and creative tools. No ads, no trackers, just the best of the open web. 🌐✨",
       "source": "github",
@@ -1019,6 +1451,18 @@
       "package_status": "not_converted"
     },
     {
+      "name": "Jairo123lol/Applications-Open-Source-List",
+      "description": "A curated collection of open-source applications and creative software alternatives across multiple categories and platforms.",
+      "source": "github",
+      "source_url": "https://github.com/Jairo123lol/Applications-Open-Source-List",
+      "language": null,
+      "stars": 0,
+      "default_branch": "main",
+      "updated_at": "2026-11-21T17:07:58Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
       "name": "jayantsingh20091988-hue/openfield",
       "description": "A free and open-source technology explorer covering science, engineering, creativity, AI, game development, electronics, physics, and multimedia tools.",
       "source": "github",
@@ -1027,6 +1471,18 @@
       "stars": 0,
       "default_branch": "main",
       "updated_at": "2026-10-04T09:23:51Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "jeffnawroth/source-taster",
+      "description": "Open-source bibliographic reference verification: checks source existence and metadata accuracy through a web app, browser extension and API.",
+      "source": "github",
+      "source_url": "https://github.com/jeffnawroth/source-taster",
+      "language": "TypeScript",
+      "stars": 0,
+      "default_branch": "main",
+      "updated_at": "2026-11-06T13:57:40Z",
       "security_status": "unreviewed",
       "package_status": "not_converted"
     },
@@ -1091,14 +1547,38 @@
       "package_status": "not_converted"
     },
     {
+      "name": "kisskiss6728/ForeverHack-OpenSource1.21.1",
+      "description": "Fabric utility mod for Minecraft 1.21.1 - open-source edition with the private auth backend removed",
+      "source": "github",
+      "source_url": "https://github.com/kisskiss6728/ForeverHack-OpenSource1.21.1",
+      "language": "Java",
+      "stars": 3,
+      "default_branch": "main",
+      "updated_at": "2026-11-26T16:35:37Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
       "name": "kortix-ai/CompanyOS",
       "description": "Kortix CompanyOS – the open-source operating system for the AI-native company. Connect every data source, orchestrate agents, and keep their skills, memory and connectors in one git repo you own. Any model, in our cloud or yours.",
       "source": "github",
       "source_url": "https://github.com/kortix-ai/CompanyOS",
       "language": "TypeScript",
-      "stars": 20798,
+      "stars": 20804,
       "default_branch": "dev",
-      "updated_at": "2026-11-25T11:48:08Z",
+      "updated_at": "2026-11-26T12:50:14Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "langchain4j/langchain4j",
+      "description": "LangChain4j is an idiomatic, open-source Java library for building LLM-powered applications on the JVM. It offers a unified API over popular LLM providers and vector stores, and makes implementing tool calling (including MCP support), agents and RAG easy. It integrates seamlessly with enterprise Java frameworks like Quarkus and Spring Boot.",
+      "source": "github",
+      "source_url": "https://github.com/langchain4j/langchain4j",
+      "language": "Java",
+      "stars": 13447,
+      "default_branch": "main",
+      "updated_at": "2026-11-26T16:31:42Z",
       "security_status": "unreviewed",
       "package_status": "not_converted"
     },
@@ -1135,6 +1615,18 @@
       "stars": 0,
       "default_branch": "master",
       "updated_at": "2019-12-14T03:52:05.672Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "luckyzifan/futureox-design-editor",
+      "description": "Open-source Rust vector editor and UI design tool. A local-first Figma alternative and Sketch alternative with WebGPU, WebAssembly, web/desktop apps and MCP automation. 开源矢量编辑器与界面设计工具。Developer Alpha.",
+      "source": "github",
+      "source_url": "https://github.com/luckyzifan/futureox-design-editor",
+      "language": "TypeScript",
+      "stars": 9,
+      "default_branch": "main",
+      "updated_at": "2026-11-17T08:38:45Z",
       "security_status": "unreviewed",
       "package_status": "not_converted"
     },
@@ -1187,6 +1679,18 @@
       "package_status": "not_converted"
     },
     {
+      "name": "MattewGamerYT/OpenFiles",
+      "description": "This is an Application that is about File Managament. Open Source, Native X86_64 And Wayland. Optimized for Arch Linux. Made with Rust and C With Vulkan Graphics.",
+      "source": "github",
+      "source_url": "https://github.com/MattewGamerYT/OpenFiles",
+      "language": null,
+      "stars": 0,
+      "default_branch": "main",
+      "updated_at": "2026-11-26T16:35:56Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
       "name": "mattyjacks/GiveGigsGames",
       "description": "Open Source Games for GiveGigs.com",
       "source": "github",
@@ -1231,6 +1735,42 @@
       "stars": 1,
       "default_branch": "main",
       "updated_at": "2026-11-22T23:50:27Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "nafiz530/SkillShelf-Labs",
+      "description": "SkillShelf Labs: free, open-source library of reusable AI skills and prompt templates for Claude, ChatGPT and Gemini. Ready-to-use SKILL.md instructions for coding, writing, learning, productivity, video and business, built for developers, creators, students and teams.",
+      "source": "github",
+      "source_url": "https://github.com/nafiz530/SkillShelf-Labs",
+      "language": "Python",
+      "stars": 1,
+      "default_branch": "main",
+      "updated_at": "2026-11-26T15:45:02Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "NCAS-CMS/xnetcdf",
+      "description": "xnetcdf is a Python open source library for representing datasets, in a variety of formats and accessed through diverse Python backends, with a common netCDF view.",
+      "source": "github",
+      "source_url": "https://github.com/NCAS-CMS/xnetcdf",
+      "language": "Python",
+      "stars": 3,
+      "default_branch": "main",
+      "updated_at": "2026-11-04T12:06:02Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "ncriscione13/wiggle-room",
+      "description": "Open-source, offline webcam motion games for kids 3-10, played on the family TV. No controllers, no accounts, no network.",
+      "source": "github",
+      "source_url": "https://github.com/ncriscione13/wiggle-room",
+      "language": "TypeScript",
+      "stars": 0,
+      "default_branch": "main",
+      "updated_at": "2026-11-25T21:46:15Z",
       "security_status": "unreviewed",
       "package_status": "not_converted"
     },
@@ -1283,6 +1823,18 @@
       "package_status": "not_converted"
     },
     {
+      "name": "opencpi/opencpi",
+      "description": "An open source software framework for developing and executing component-based applications on heterogeneous embedded systems.",
+      "source": "gitlab",
+      "source_url": "https://gitlab.com/opencpi/opencpi",
+      "language": null,
+      "stars": 25,
+      "default_branch": "develop",
+      "updated_at": "2026-11-25T21:30:42.100Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
       "name": "opencx-labs/catamorphic",
       "description": "Work, the open-source desktop app for getting work done with AI agents (work.software), and Catamorphic, the framework underneath for embedding agents, workflows and apps in your own products",
       "source": "github",
@@ -1331,6 +1883,18 @@
       "package_status": "not_converted"
     },
     {
+      "name": "oysteinkrog/localbuilds",
+      "description": "Recipes and a build script for the open source software I patch or build from source on my Arch desktop",
+      "source": "github",
+      "source_url": "https://github.com/oysteinkrog/localbuilds",
+      "language": "Shell",
+      "stars": 0,
+      "default_branch": "main",
+      "updated_at": "2026-11-03T22:10:01Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
       "name": "paladini/devutils-mcp-server",
       "description": "An open-source DevUtils MCP Server — a comprehensive developer utilities toolkit for the Docker MCP Catalog. It provides 36 tools across 8 categories that AI assistants can invoke directly.",
       "source": "gitlab",
@@ -1348,9 +1912,9 @@
       "source": "github",
       "source_url": "https://github.com/Parcha-ai/agentrun",
       "language": "JavaScript",
-      "stars": 1268,
+      "stars": 1275,
       "default_branch": "main",
-      "updated_at": "2026-11-25T15:59:11Z",
+      "updated_at": "2026-11-26T14:25:38Z",
       "security_status": "unreviewed",
       "package_status": "not_converted"
     },
@@ -1379,6 +1943,18 @@
       "package_status": "not_converted"
     },
     {
+      "name": "pritpatel2412/SearchMind-API",
+      "description": "Open-source Tavily alternative for AI agents. Provides real-time search extraction, parallel page scraping, multi-query deep research, and AI answers, bundled with developer portal & admin tools.",
+      "source": "github",
+      "source_url": "https://github.com/pritpatel2412/SearchMind-API",
+      "language": "JavaScript",
+      "stars": 4,
+      "default_branch": "main",
+      "updated_at": "2026-10-28T17:19:55Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
       "name": "Priyanka12-dot/ams-educational",
       "description": "An open-source accounting management system and hands-on learning environment for double-entry bookkeeping and modern software architecture. The project demonstrates accounting rules alongside Clean/Hexagonal Architecture, Domain-Driven Design, and CQRS concepts.",
       "source": "github",
@@ -1387,6 +1963,30 @@
       "stars": 0,
       "default_branch": "main",
       "updated_at": "2026-10-30T04:25:01Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "priyanshkk/priyanshkk",
+      "description": "GitHub profile README of Priyanshu Kumar (priyanshkk) — open-source developer from India building Python, TypeScript and AI tools.",
+      "source": "github",
+      "source_url": "https://github.com/priyanshkk/priyanshkk",
+      "language": null,
+      "stars": 1,
+      "default_branch": "main",
+      "updated_at": "2026-11-26T16:27:02Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "priyanshkk/priyanshkk.github.io",
+      "description": "Animated portfolio of Priyanshu Kumar — open-source developer, Python and TypeScript, AI and CLI tools, India.",
+      "source": "github",
+      "source_url": "https://github.com/priyanshkk/priyanshkk.github.io",
+      "language": "HTML",
+      "stars": 1,
+      "default_branch": "main",
+      "updated_at": "2026-11-26T16:27:01Z",
       "security_status": "unreviewed",
       "package_status": "not_converted"
     },
@@ -1435,6 +2035,18 @@
       "stars": 0,
       "default_branch": "main",
       "updated_at": "2026-11-25T16:29:27.623Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "rachel.green.r/ecoscan-14052249-deletion_scheduled-89486149",
+      "description": "An Open Source Virtual Tabletop for playing games with friends all over the world",
+      "source": "gitlab",
+      "source_url": "https://gitlab.com/rachel.green.r/ecoscan-14052249-deletion_scheduled-89486149",
+      "language": null,
+      "stars": 0,
+      "default_branch": "main",
+      "updated_at": "2026-11-26T09:35:19.631Z",
       "security_status": "unreviewed",
       "package_status": "not_converted"
     },
@@ -1511,6 +2123,78 @@
       "package_status": "not_converted"
     },
     {
+      "name": "rachel.green.r/ecoscan-6671359-deletion_scheduled-89464362",
+      "description": "Lely core libraries | https://opensource.lely.com/canopen/",
+      "source": "gitlab",
+      "source_url": "https://gitlab.com/rachel.green.r/ecoscan-6671359-deletion_scheduled-89464362",
+      "language": null,
+      "stars": 0,
+      "default_branch": "master",
+      "updated_at": "2026-11-25T19:48:19.132Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "rachel.green.r/ecoscan-6671359-deletion_scheduled-89472577",
+      "description": "Lely core libraries | https://opensource.lely.com/canopen/",
+      "source": "gitlab",
+      "source_url": "https://gitlab.com/rachel.green.r/ecoscan-6671359-deletion_scheduled-89472577",
+      "language": null,
+      "stars": 0,
+      "default_branch": "master",
+      "updated_at": "2026-11-26T01:29:07.637Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "rachel.green.r/ecoscan-6671359-deletion_scheduled-89481090",
+      "description": "Lely core libraries | https://opensource.lely.com/canopen/",
+      "source": "gitlab",
+      "source_url": "https://gitlab.com/rachel.green.r/ecoscan-6671359-deletion_scheduled-89481090",
+      "language": null,
+      "stars": 0,
+      "default_branch": "master",
+      "updated_at": "2026-11-26T07:07:43.707Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "rachel.green.r/ecoscan-6671359-deletion_scheduled-89494723",
+      "description": "Lely core libraries | https://opensource.lely.com/canopen/",
+      "source": "gitlab",
+      "source_url": "https://gitlab.com/rachel.green.r/ecoscan-6671359-deletion_scheduled-89494723",
+      "language": null,
+      "stars": 0,
+      "default_branch": "master",
+      "updated_at": "2026-11-26T12:50:15.054Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "rachel.green.r/ecoscan-73442-deletion_scheduled-89475993",
+      "description": "The open source, cross platform level editor for idtech games (GtkRadiant fork) - [netradiant.gitlab.io](https://netradiant.gitlab.io)",
+      "source": "gitlab",
+      "source_url": "https://gitlab.com/rachel.green.r/ecoscan-73442-deletion_scheduled-89475993",
+      "language": null,
+      "stars": 0,
+      "default_branch": "master",
+      "updated_at": "2026-11-26T03:56:15.530Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "RamazanKara/Rubylight",
+      "description": "Free, open-source game-streaming host for Windows PCs with AMD Radeon or NVIDIA graphics. Play your PC games on your TV, phone, handheld, laptop or in a web browser: low latency, HDR, a virtual display sized for each device, per-game settings, couch co-op and USB forwarding. Works with Moonlight, Artemis and Nightjar.",
+      "source": "github",
+      "source_url": "https://github.com/RamazanKara/Rubylight",
+      "language": "Rust",
+      "stars": 264,
+      "default_branch": "main",
+      "updated_at": "2026-11-26T16:19:26Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
       "name": "rautyrauty/scilab",
       "description": "Scilab is free and open source software for numerical computation providing a powerful computing environment for engineering and scientific applications.",
       "source": "gitlab",
@@ -1543,6 +2227,30 @@
       "stars": 9,
       "default_branch": "main",
       "updated_at": "2026-11-25T15:38:08Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "Rooindustries/PerformanceVertexUtility",
+      "description": "Performance Vertex Utility: free, open-source Windows tuning for games",
+      "source": "github",
+      "source_url": "https://github.com/Rooindustries/PerformanceVertexUtility",
+      "language": "PowerShell",
+      "stars": 1,
+      "default_branch": "main",
+      "updated_at": "2026-11-19T13:09:19Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "rootcommit/foss-apps-android",
+      "description": "Presentation on Free and Open Source applications on Android",
+      "source": "gitlab",
+      "source_url": "https://gitlab.com/rootcommit/foss-apps-android",
+      "language": null,
+      "stars": 0,
+      "default_branch": "master",
+      "updated_at": "2026-11-26T14:00:42.926Z",
       "security_status": "unreviewed",
       "package_status": "not_converted"
     },
@@ -1727,6 +2435,18 @@
       "package_status": "not_converted"
     },
     {
+      "name": "rudi-cilibrasi/openverse",
+      "description": "an unofficial (not Epic Games related) open-source Verse runtime with Lean verification",
+      "source": "github",
+      "source_url": "https://github.com/rudi-cilibrasi/openverse",
+      "language": "Lean",
+      "stars": 10,
+      "default_branch": "main",
+      "updated_at": "2026-11-20T14:52:01Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
       "name": "sahuhaseeb0/webtools",
       "description": "Open-source index of fast browser utilities including [https://stylishname.app/](https://stylishname.app/), [https://instanamestyle.tech/](https://instanamestyle.tech/), [https://pomodorotimer.cc/](https://pomodorotimer.cc/), [https://cambiardeletra.com.es/](https://cambiardeletra.com.es/), and [https://cambiardeletra.cc/](https://cambiardeletra.cc/).",
       "source": "gitlab",
@@ -1787,6 +2507,18 @@
       "package_status": "not_converted"
     },
     {
+      "name": "ScienceDiscovery/github-status-board",
+      "description": "Local, self-hosted dashboard for one GitHub repository: issues, PRs, CI health, test distribution/coverage and open-source operations. Python 3 standard library only - no dependencies, no build step, read-only.",
+      "source": "github",
+      "source_url": "https://github.com/ScienceDiscovery/github-status-board",
+      "language": "Python",
+      "stars": 0,
+      "default_branch": "main",
+      "updated_at": "2026-11-12T16:35:56Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
       "name": "scilab/scilab",
       "description": "Scilab is free and open source software for numerical computation providing a powerful computing environment for engineering and scientific applications.",
       "source": "gitlab",
@@ -1811,6 +2543,18 @@
       "package_status": "not_converted"
     },
     {
+      "name": "sentient012/sentient-security",
+      "description": "Open-source security library for Sentient.",
+      "source": "github",
+      "source_url": "https://github.com/sentient012/sentient-security",
+      "language": "TypeScript",
+      "stars": 0,
+      "default_branch": "main",
+      "updated_at": "2026-11-26T09:08:32Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
       "name": "sergioide007/specsolid",
       "description": "Research and Open Source implementation of decoupled AI architectures, XAI, and high-performance software principles. Created for educational and community contribution purposes.",
       "source": "github",
@@ -1823,6 +2567,18 @@
       "package_status": "not_converted"
     },
     {
+      "name": "SgtFlame/foundation",
+      "description": "Open Source Foundation libraries",
+      "source": "github",
+      "source_url": "https://github.com/SgtFlame/foundation",
+      "language": "Go",
+      "stars": 0,
+      "default_branch": "main",
+      "updated_at": "2026-10-28T20:45:04Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
       "name": "sh-clock/lively",
       "description": "Free and open-source software that allows users to set animated desktop wallpapers and screensavers powered by WinUI 3.",
       "source": "github",
@@ -1831,6 +2587,18 @@
       "stars": 0,
       "default_branch": "core-separation",
       "updated_at": "2026-11-23T23:11:53Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "shlomif/PySolFC",
+      "description": "A comprehensive, feature-rich, open source, and portable, collection of Solitaire games.",
+      "source": "github",
+      "source_url": "https://github.com/shlomif/PySolFC",
+      "language": "Python",
+      "stars": 575,
+      "default_branch": "master",
+      "updated_at": "2026-11-19T18:45:08Z",
       "security_status": "unreviewed",
       "package_status": "not_converted"
     },
@@ -1895,6 +2663,30 @@
       "package_status": "not_converted"
     },
     {
+      "name": "Surya-Hariharan/Velune-CLI",
+      "description": "VELUNE CLI is an open-source AI engineering CLI that unifies local LLMs (Ollama), cloud AI providers, MCP servers, tools, memory, and project context into a single developer workflow. Build, code, automate, and orchestrate AI with one extensible, provider-agnostic command-line interface.",
+      "source": "github",
+      "source_url": "https://github.com/Surya-Hariharan/Velune-CLI",
+      "language": "Python",
+      "stars": 18,
+      "default_branch": "main",
+      "updated_at": "2026-11-26T16:15:01Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "tahuffman1s/LORE",
+      "description": "Lovely Open Rust Engine: a free, open-source engine for first- and third-person 3D games, single-player first (Rust, Luau, Vulkan)",
+      "source": "github",
+      "source_url": "https://github.com/tahuffman1s/LORE",
+      "language": "Rust",
+      "stars": 0,
+      "default_branch": "main",
+      "updated_at": "2026-11-16T06:12:27Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
       "name": "Taiizor/Sucrose",
       "description": "Free and open-source software that allows users to set animated desktop wallpapers powered by WPF.",
       "source": "gitlab",
@@ -1924,9 +2716,9 @@
       "source": "github",
       "source_url": "https://github.com/tangency-labs/solidcraft",
       "language": "Rust",
-      "stars": 18213,
+      "stars": 18464,
       "default_branch": "main",
-      "updated_at": "2026-11-25T16:47:30Z",
+      "updated_at": "2026-11-26T16:33:42Z",
       "security_status": "unreviewed",
       "package_status": "not_converted"
     },
@@ -1963,6 +2755,18 @@
       "stars": 1,
       "default_branch": "main",
       "updated_at": "2026-11-11T15:44:18Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "TypesetOK/typesetok",
+      "description": "Modern open-source desktop publishing and typesetting software for precise document layout and professional typography.",
+      "source": "github",
+      "source_url": "https://github.com/TypesetOK/typesetok",
+      "language": "Rust",
+      "stars": 15,
+      "default_branch": "main",
+      "updated_at": "2026-11-24T00:13:03Z",
       "security_status": "unreviewed",
       "package_status": "not_converted"
     },
@@ -2010,7 +2814,7 @@
       "language": null,
       "stars": 0,
       "default_branch": "6.1",
-      "updated_at": "2026-11-25T16:08:01.342Z",
+      "updated_at": "2026-11-26T15:08:50.241Z",
       "security_status": "unreviewed",
       "package_status": "not_converted"
     },
@@ -2051,6 +2855,18 @@
       "package_status": "not_converted"
     },
     {
+      "name": "WhiteTowerAI/ohmygame",
+      "description": "The open-source studio for making games with AI. Your own one-person game studio. Everything you need to make games with AI, in one app. Game canvas.  Bring your own key.",
+      "source": "github",
+      "source_url": "https://github.com/WhiteTowerAI/ohmygame",
+      "language": "TypeScript",
+      "stars": 3778,
+      "default_branch": "main",
+      "updated_at": "2026-11-26T16:22:10Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
       "name": "widelab-co/wideset",
       "description": "An open source React design system with a matching Figma library, built for the people and the coding agents who ship product UI together.",
       "source": "github",
@@ -2059,6 +2875,18 @@
       "stars": 9,
       "default_branch": "develop",
       "updated_at": "2026-11-20T10:34:00Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "witchesofthehill/manabrew",
+      "description": "Open-source MTG client for the web and desktop, with MTG Forge running in-browser via WebAssembly.",
+      "source": "github",
+      "source_url": "https://github.com/witchesofthehill/manabrew",
+      "language": "Rust",
+      "stars": 117,
+      "default_branch": "main",
+      "updated_at": "2026-11-24T17:12:05Z",
       "security_status": "unreviewed",
       "package_status": "not_converted"
     },
@@ -2111,6 +2939,54 @@
       "package_status": "not_converted"
     },
     {
+      "name": "Y2A0S0S6ER/YASSER",
+      "description": "open-source tools and utilities built by Yasser",
+      "source": "github",
+      "source_url": "https://github.com/Y2A0S0S6ER/YASSER",
+      "language": "Python",
+      "stars": 0,
+      "default_branch": "main",
+      "updated_at": "2026-11-26T15:03:05Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "yashucoder11/Live-Stats-Tracker-Automation-Toolkit",
+      "description": "Open-source utilities for real-time platform analytics (GitHub, LeetCode, Docker, Dailymotion) and smart media automation (Text-to-Speech).",
+      "source": "github",
+      "source_url": "https://github.com/yashucoder11/Live-Stats-Tracker-Automation-Toolkit",
+      "language": null,
+      "stars": 0,
+      "default_branch": "main",
+      "updated_at": "2026-11-26T15:37:47Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "Yisusocanto/pixel-reviews-frontend",
+      "description": "Web client for Pixel Reviews, an open-source social platform for discovering video games, publishing community reviews, curating wishlists, and discussing titles with other players.",
+      "source": "github",
+      "source_url": "https://github.com/Yisusocanto/pixel-reviews-frontend",
+      "language": "TypeScript",
+      "stars": 0,
+      "default_branch": "main",
+      "updated_at": "2026-11-23T18:14:32Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "yqh-core/dev-tools",
+      "description": "CoderKit — 100+ free online developer tools for JSON, Base64, JWT, regex, cron, hashes and more. Runs in your browser with no sign-up. Open source, based on it-tools.",
+      "source": "github",
+      "source_url": "https://github.com/yqh-core/dev-tools",
+      "language": "HTML",
+      "stars": 0,
+      "default_branch": "main",
+      "updated_at": "2026-11-12T17:18:20Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
       "name": "Zafnok/shuyi-engine",
       "description": "Shuyi Engine: an open-source 2D game engine in Rust, built so coding agents can make, run, see, test and replay games. Carved out of Visions of Shuyi.",
       "source": "github",
@@ -2119,6 +2995,18 @@
       "stars": 0,
       "default_branch": "main",
       "updated_at": "2026-11-12T17:05:05Z",
+      "security_status": "unreviewed",
+      "package_status": "not_converted"
+    },
+    {
+      "name": "zhnpeng/WebPoB",
+      "description": "Open-source web Path of Building viewer & planner for Path of Exile 1 & 2 — zero-install browser passive tree, pobb.in/poe.ninja import, multi-spec tree diff & bilingual EN/ZH UI",
+      "source": "github",
+      "source_url": "https://github.com/zhnpeng/WebPoB",
+      "language": "TypeScript",
+      "stars": 0,
+      "default_branch": "main",
+      "updated_at": "2026-11-26T13:46:21Z",
       "security_status": "unreviewed",
       "package_status": "not_converted"
     }
